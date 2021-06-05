@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style3 {
+	font-size: 24px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="Layer2" style="position:absolute; left:417px; top:32px; width:429px; height:49px; z-index:2">
+  <div align="center" class="style3">Soporte Tecnico </div>
+</div>
+<div id="Layer2" style="position:absolute; left:372px; top:146px; width:430px; height:90px; z-index:2"><img src="el-computador.jpg" width="586" height="350" border="0" usemap="#Map">
+  <map name="Map">
+    <area shape="rect" coords="183,85,319,230" href="https://hardzone.es/reportajes/que-es/drivers-hardware/" target="_blank">
+    <area shape="rect" coords="131,165,184,227" href="https://realtek-hd-audio-drivers-xp.softonic.com/" target="_blank">
+    <area shape="rect" coords="140,232,316,277" href="https://www.solodrivers.com/Teclados/16" target="_blank">
+    <area shape="rect" coords="43,160,130,266" href="https://downloadcenter.intel.com/es/download/28433/Controlador-de-audio-de-alta-definici-n-Realtek-para-Windows-10-de-64-bits-para-NUC8i7BE-NUC8i5BE-NUC8i3BE" target="_blank">
+    <area shape="rect" coords="413,53,554,171" href="https://support.microsoft.com/es-es/windows/descargar-controladores-de-impresora-da9b1460-7299-4cc3-e974-33cf99d86880" target="_blank">
+  </map>
+</div><script type="text/javascript">
+
+/***********************************************
+
+* JavaScript Image Clock- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+
+***********************************************/
+
+var imageclock=new Object()
+	//Enter path to clock digit images here, in order of 0-9, then "am/pm", then colon image:
+	imageclock.digits=["c0.gif", "c1.gif", "c2.gif", "c3.gif", "c4.gif", "c5.gif", "c6.gif", "c7.gif", "c8.gif", "c9.gif", "cam.gif", "cpm.gif", "colon.gif"]
+	imageclock.instances=0
+	var preloadimages=[]
+	for (var i=0; i<imageclock.digits.length; i++){ //preload images
+		preloadimages[i]=new Image()
+		preloadimages[i].src=imageclock.digits[i]
+	}
+
+	imageclock.imageHTML=function(timestring){ //return timestring (ie: 1:56:38) into string of images instead
+		var sections=timestring.split(":")
+		if (sections[0]=="0") //If hour field is 0 (aka 12 AM)
+			sections[0]="12"
+		else if (sections[0]>=13)
+			sections[0]=sections[0]-12+""
+		for (var i=0; i<sections.length; i++){
+			if (sections[i].length==1)
+				sections[i]='<img src="'+imageclock.digits[0]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i])]+'" />'
+			else
+				sections[i]='<img src="'+imageclock.digits[parseInt(sections[i].charAt(0))]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i].charAt(1))]+'" />'
+		}
+		return sections[0]+'<img src="'+imageclock.digits[12]+'" />'+sections[1]+'<img src="'+imageclock.digits[12]+'" />'+sections[2]
+	}
+
+	imageclock.display=function(){
+		var clockinstance=this
+		this.spanid="clockspan"+(imageclock.instances++)
+		document.write('<span id="'+this.spanid+'"></span>')
+		this.update()
+		setInterval(function(){clockinstance.update()}, 1000)
+	}
+
+	imageclock.display.prototype.update=function(){
+		var dateobj=new Date()
+		var currenttime=dateobj.getHours()+":"+dateobj.getMinutes()+":"+dateobj.getSeconds() //create time string
+		var currenttimeHTML=imageclock.imageHTML(currenttime)+'<img src="'+((dateobj.getHours()>=12)? imageclock.digits[11] : imageclock.digits[10])+'" />'
+		document.getElementById(this.spanid).innerHTML=currenttimeHTML
+
+	}
+
+
+</script>
+<div id="Layer2" style="position:absolute; left:22px; top:166px; width:330px; height:104px; z-index:2"><div style="position:relative;left:0px;top:0px">
+<span id="highlighter" style="position:absolute;left:0;top:0;font-size:18px;font-family:Verdana;background-color:yellow;clip:rect(0px 0px auto 0px)"></span>
+</div>
+
+<script type="text/javascript">
+
+/*
+Highligher Scroller script- By JavaScript Kit
+For this and over 400+ free scripts, visit http://www.javascriptkit.com/
+This notice must stay intact
+*/
+
+var tickercontents=new Array()
+tickercontents[0]='BIENVENIDO A LA MEJOR'
+tickercontents[1]='EXPERIENCIA DE TU VIDA'
+tickercontents[2]='CON LA MAS AVANZADA TECNOLOGIA DEL MUNDO</a>'
+
+var tickdelay=3000 //delay btw messages
+var highlightspeed=10 //10 pixels at a time.
+
+////Do not edit pass this line////////////////
+
+var currentmessage=0
+var clipwidth=0
+
+function changetickercontent(){
+crosstick.style.clip="rect(0px 0px auto 0px)"
+crosstick.innerHTML=tickercontents[currentmessage]
+highlightmsg()
+}
+
+function highlightmsg(){
+var msgwidth=crosstick.offsetWidth
+if (clipwidth<msgwidth){
+clipwidth+=highlightspeed
+crosstick.style.clip="rect(0px "+clipwidth+"px auto 0px)"
+beginclip=setTimeout("highlightmsg()",20)
+}
+else{
+clipwidth=0
+clearTimeout(beginclip)
+if (currentmessage==tickercontents.length-1) currentmessage=0
+else currentmessage++
+setTimeout("changetickercontent()",tickdelay)
+}
+}
+
+function start_ticking(){
+crosstick=document.getElementById? document.getElementById("highlighter") : document.all.highlighter
+crosstickParent=crosstick.parentNode? crosstick.parentNode : crosstick.parentElement
+if (parseInt(crosstick.offsetHeight)>0)
+crosstickParent.style.height=crosstick.offsetHeight+'px'
+else
+setTimeout("crosstickParent.style.height=crosstick.offsetHeight+'px'",100) //delay for Mozilla's sake
+changetickercontent()
+}
+
+if (document.all || document.getElementById)
+window.onload=start_ticking
+
+</script>
+
+<p align="left">&nbsp;</p>
+</div>
+</body>
+</html>

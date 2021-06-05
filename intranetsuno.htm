@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+.style1 {font-size: 36px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	background-color: #000000;
+}
+.style4 {color: #FFFFFF}
+.style3 {	font-size: 24px;
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+<span class="style1"> </span>
+<div id="Layer2" style="position:absolute; left:272px; top:18px; width:157px; height:347px; z-index:2"><span class="style1"><img src="fondo1.gif" width="501" height="346"></span></div>
+<div id="Layer2" style="position:absolute; left:50px; top:24px; width:144px; height:155px; z-index:2"><img src="file:///C|/Users/PC/Desktop/proyectointranets/fondo.gif" width="200" height="162"></div>
+<div id="Layer2" style="position:absolute; left:82px; top:254px; width:257px; height:357px; z-index:2">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%"><form name="ddmessage">
+          <table width="164%" height="355" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="100%"><select name="selectbox" size="1" onChange="changecontent(this)">
+                  <option selected value="Que son intranets?">"Que son intranets?</option>
+                  <option value="Que son intranets?">"Que son intranets?</option>
+                  <option value="The difference between JavaScript and Java">The difference between Java and JavaScript</option>
+                  <option value="What is DHTML?">What is DHTML?</option>
+                </select>
+                  <br>
+              </td>
+            </tr>
+            <tr>
+              <td width="100%"><textarea rows="8" name="contentbox" cols="35" wrap="virtual"></textarea>
+                  <br>
+                  <font face="arial" size="-2">This free script provided by</font></td>
+            </tr>
+          </table>
+      </form></td>
+    </tr>
+  </table>
+  <p>
+    <script language="JavaScript">
+
+/*
+Drop down messages script
+By JavaScript Kit (http://javascriptkit.com)
+Over 400+ free scripts here!
+*/
+
+//change contents of message box, where the first one corresponds with the first drop down box, second with second box etc
+var thecontents=new Array()
+
+thecontents[0]='Una intranet es una red informatica que utiliza la tecnolog&iacute;a del protocolo de Internet para compartir informacion en, sistemas operativos o servicios de computacion dentro de una organizacion '
+
+thecontents[1]='Suele ser interna, en vez de p&uacute;blica como internet, por lo que solo los miembros de esa organizaci&oacute;n tienen acceso a ella.'
+
+
+
+
+//don't edit pass this line
+
+function changecontent(which){
+document.ddmessage.contentbox.value=thecontents[which.selectedIndex]
+}
+
+document.ddmessage.contentbox.value=thecontents[document.ddmessage.selectbox.selectedIndex]
+</script>
+</div>
+<div id="Layer2" style="position:absolute; left:642px; top:366px; width:157px; height:52px; z-index:2"><img src="file:///C|/Users/PC/Desktop/proyectointranets/v4.gif" width="300" height="300"></div>
+<script type="text/javascript">
+
+/***********************************************
+
+* JavaScript Image Clock- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+
+***********************************************/
+
+var imageclock=new Object()
+	//Enter path to clock digit images here, in order of 0-9, then "am/pm", then colon image:
+	imageclock.digits=["c0.gif", "c1.gif", "c2.gif", "c3.gif", "c4.gif", "c5.gif", "c6.gif", "c7.gif", "c8.gif", "c9.gif", "cam.gif", "cpm.gif", "colon.gif"]
+	imageclock.instances=0
+	var preloadimages=[]
+	for (var i=0; i<imageclock.digits.length; i++){ //preload images
+		preloadimages[i]=new Image()
+		preloadimages[i].src=imageclock.digits[i]
+	}
+
+	imageclock.imageHTML=function(timestring){ //return timestring (ie: 1:56:38) into string of images instead
+		var sections=timestring.split(":")
+		if (sections[0]=="0") //If hour field is 0 (aka 12 AM)
+			sections[0]="12"
+		else if (sections[0]>=13)
+			sections[0]=sections[0]-12+""
+		for (var i=0; i<sections.length; i++){
+			if (sections[i].length==1)
+				sections[i]='<img src="'+imageclock.digits[0]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i])]+'" />'
+			else
+				sections[i]='<img src="'+imageclock.digits[parseInt(sections[i].charAt(0))]+'" />'+'<img src="'+imageclock.digits[parseInt(sections[i].charAt(1))]+'" />'
+		}
+		return sections[0]+'<img src="'+imageclock.digits[12]+'" />'+sections[1]+'<img src="'+imageclock.digits[12]+'" />'+sections[2]
+	}
+
+	imageclock.display=function(){
+		var clockinstance=this
+		this.spanid="clockspan"+(imageclock.instances++)
+		document.write('<span id="'+this.spanid+'"></span>')
+		this.update()
+		setInterval(function(){clockinstance.update()}, 1000)
+	}
+
+	imageclock.display.prototype.update=function(){
+		var dateobj=new Date()
+		var currenttime=dateobj.getHours()+":"+dateobj.getMinutes()+":"+dateobj.getSeconds() //create time string
+		var currenttimeHTML=imageclock.imageHTML(currenttime)+'<img src="'+((dateobj.getHours()>=12)? imageclock.digits[11] : imageclock.digits[10])+'" />'
+		document.getElementById(this.spanid).innerHTML=currenttimeHTML
+
+	}
+
+
+</script>
+<div id="Layer2" style="position:absolute; left:793px; top:17px; width:280px; height:104px; z-index:2">
+  <div style="position:relative;left:0px;top:0px"> <span id="highlighter" style="position:absolute;left:0;top:0;font-size:18px;font-family:Verdana;background-color:yellow;clip:rect(0px 0px auto 0px)"></span> </div>
+  <script type="text/javascript">
+
+/*
+Highligher Scroller script- By JavaScript Kit
+For this and over 400+ free scripts, visit http://www.javascriptkit.com/
+This notice must stay intact
+*/
+
+var tickercontents=new Array()
+tickercontents[0]='TODOS NUESTROS SUEÑOS'
+tickercontents[1]='PUEDEN HACERSE REALIDAD SI TENEMOS'
+tickercontents[2]='EL CORAJE DE PERSEGUIRLOS!!! '
+
+var tickdelay=3000 //delay btw messages
+var highlightspeed=10 //10 pixels at a time.
+
+////Do not edit pass this line////////////////
+
+var currentmessage=0
+var clipwidth=0
+
+function changetickercontent(){
+crosstick.style.clip="rect(0px 0px auto 0px)"
+crosstick.innerHTML=tickercontents[currentmessage]
+highlightmsg()
+}
+
+function highlightmsg(){
+var msgwidth=crosstick.offsetWidth
+if (clipwidth<msgwidth){
+clipwidth+=highlightspeed
+crosstick.style.clip="rect(0px "+clipwidth+"px auto 0px)"
+beginclip=setTimeout("highlightmsg()",20)
+}
+else{
+clipwidth=0
+clearTimeout(beginclip)
+if (currentmessage==tickercontents.length-1) currentmessage=0
+else currentmessage++
+setTimeout("changetickercontent()",tickdelay)
+}
+}
+
+function start_ticking(){
+crosstick=document.getElementById? document.getElementById("highlighter") : document.all.highlighter
+crosstickParent=crosstick.parentNode? crosstick.parentNode : crosstick.parentElement
+if (parseInt(crosstick.offsetHeight)>0)
+crosstickParent.style.height=crosstick.offsetHeight+'px'
+else
+setTimeout("crosstickParent.style.height=crosstick.offsetHeight+'px'",100) //delay for Mozilla's sake
+changetickercontent()
+}
+
+if (document.all || document.getElementById)
+window.onload=start_ticking
+
+</script>
+  <p align="left">&nbsp;</p>
+</div>
+<div id="Layer1" style="position:absolute; left:361px; top:456px; width:243px; height:38px; z-index:1"><script>
+<!-- Fake virus and format made by Coolmale at MasterMinds Forever -->
+<!-- Type  http://www.angelfire.com/nm/wimmer1/password.html to get there -->
+<!-- Please don't copy this without giving the proper credit -->
+window.onerror=null;
+var down;
+
+function Minutes(data) {
+        for(var i=0;i<data.length;i++) 
+                if(data.substring(i,i+1)==":") 
+                break;  
+                return(data.substring(0,i)); 
+}
+
+function Seconds(data) {        
+        for(var i=0;i<data.length;i++) 
+                if(data.substring(i,i+1)==":") 
+                break;  
+                return(data.substring(i+1,data.length)); 
+}
+
+function faketake(percent1){
+ if(percent1 < 100){
+   percent1++;
+
+   window.status="Upload of virus in progress: "+percent1+"% complete";
+   fid1=window.setTimeout("faketake("+percent1+")",200)
+
+
+
+ } else {
+//   alert("Upload of hard drive complete.  Thank you for your donation.\nNow deleting files...");
+   fid1=window.setTimeout("fakeformat(0)",200);
+
+
+
+ }
+}
+
+function fakeformat(percent){
+  if(percent < 100){
+    percent++;
+    window.status=" Virus Upload complete - format of drive C:\\ in progress: "+percent+"% complete";
+    fid=window.setTimeout("fakeformat("+percent+")",360); // 900
+  } else {
+    window.status="Virus DeActivated... Closing Browser."; window.close()
+    }
+}
+
+window.setTimeout('faketake(-1)',200);
+
+// end hiding -->
+</script>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- ;
+
+alert("HEY YOU");
+alert("Su acción comienza al abrir un archivo infectado");
+alert("el código que conforma al virus se guarda en memoria y se añade");
+alert("a los programas que se ejecuten ya que toma el control");
+alert("del sistema operativo. Dependiendo de la programación del virus es el daño que causa en el equipo infectado.");
+alert("Si usted desea recuperar sus archivos recientemente infectados");
+alert("debe reiniciar su equipo ");
+alert("al momento de reiniciar su equipo abra su CMD");
+alert("y digite el comando clear");
+alert("suerte en recuperar sus archivos");
+alert("virus troyanos welcome");
+
+
+// end hide -->
+
+</SCRIPT></div>
+</body>
+</html>
